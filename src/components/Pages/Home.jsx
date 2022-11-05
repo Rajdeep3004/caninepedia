@@ -113,6 +113,8 @@ const Home = () => {
             if (data.value[i].title.includes(`Wikipedia`)) {
               setDesc(data.value[i].description);
               setUrl(data.value[i].url);
+            } else {
+              setDesc("Api couldn't fetch wiki for now.");
             }
           }
         })
