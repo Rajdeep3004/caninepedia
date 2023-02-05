@@ -1,20 +1,30 @@
 import "./index.css";
 import { Fragment } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Pages/Home";
 import About from "./components/Pages/About";
 
+const router = createBrowserRouter([
+  {
+    path: "",
+    element: <Navbar />,
+    children: [
+      { path: "*", element: <Navigate to="/" replace={true} /> },
+      { path: "/", element: <Home /> },
+      { path: "about", element: <About /> },
+    ],
+  },
+]);
+
 const App = () => {
   return (
     <Fragment>
-      <Navbar />
-
-      <Routes>
-        <Route path="*" element={<Navigate to="home" replace={true} />} />
-        <Route path="home" element={<Home />} />
-        <Route path="about" element={<About />} />
-      </Routes>
+      <RouterProvider router={router} />
     </Fragment>
   );
 };

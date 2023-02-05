@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import svg from "../assets/caninepedia.svg";
 
 const Navbar = () => {
@@ -7,7 +7,7 @@ const Navbar = () => {
     <Fragment>
       <nav className="text text-color flex justify-between items-center m-4  ">
         <div>
-          <NavLink to="home" className="navlink">
+          <NavLink to="/" className="navlink">
             Caninepedia
             <img
               src={svg}
@@ -21,6 +21,7 @@ const Navbar = () => {
           </NavLink>
         </div>
       </nav>
+      <Outlet />
     </Fragment>
   );
 };
