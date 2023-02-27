@@ -41,20 +41,6 @@ const Form = React.memo(
             <p className="text text-center mt-8">No such breed data found.</p>
           )}
         </form>
-
-        {/* if data exists */}
-        {props.showData && (
-          <Data
-            fetchHandler={props.fetchHandler}
-            showButton={props.showButton}
-            setShowButton={props.setShowButton}
-            largeArr={props.largeArr}
-            fullArr={props.fullArr}
-            desc={props.desc}
-            url={props.url}
-            ref={ref}
-          />
-        )}
       </Fragment>
     );
   })

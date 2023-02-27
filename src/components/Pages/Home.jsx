@@ -1,5 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, Fragment } from "react";
 import Form from "./Form";
+import Data from "./Data";
 
 const Home = () => {
   const dogName = useRef(); // input ref
@@ -128,19 +129,33 @@ const Home = () => {
   /////////////////////////////////////////////////
 
   return (
-    <Form
-      fetchHandler={fetchHandler}
-      ref={dogName}
-      blur={blur}
-      error={error}
-      showData={showData}
-      showButton={showButton}
-      setShowButton={setShowButton}
-      largeArr={largeArr}
-      fullArr={fullArr}
-      desc={desc}
-      url={url}
-    />
+    <Fragment>
+      <Form
+        fetchHandler={fetchHandler}
+        ref={dogName}
+        blur={blur}
+        error={error}
+        showData={showData}
+        showButton={showButton}
+        setShowButton={setShowButton}
+        largeArr={largeArr}
+        fullArr={fullArr}
+        desc={desc}
+        url={url}
+      />
+      {showData && (
+        <Data
+          fetchHandler={fetchHandler}
+          showButton={showButton}
+          setShowButton={setShowButton}
+          largeArr={largeArr}
+          fullArr={fullArr}
+          desc={desc}
+          url={url}
+          ref={dogName}
+        />
+      )}
+    </Fragment>
   );
 };
 
