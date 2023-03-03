@@ -135,17 +135,9 @@ const Home = () => {
         ref={dogName}
         blur={blur}
         error={error}
-        showData={showData}
-        showButton={showButton}
-        setShowButton={setShowButton}
-        largeArr={largeArr}
-        fullArr={fullArr}
-        desc={desc}
-        url={url}
       />
       {showData && (
         <Data
-          fetchHandler={fetchHandler}
           showButton={showButton}
           setShowButton={setShowButton}
           largeArr={largeArr}
