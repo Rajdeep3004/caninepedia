@@ -23,11 +23,11 @@ const Data = React.memo(
           <div>
             <div className="data-left-grid-outer">
               <div className="data-left-grid-inner">
-                <img
+                {props.largeArr.length ===1 && <img
                   alt={props.largeArr[0].name}
                   src={props.largeArr[0].link}
                   className="w-2/4 sm:w-full mx-auto "
-                />
+                />}
 
                 <div className="text-center bg-white bg-opacity-75">
                   {props.largeArr.length > 1 && (
