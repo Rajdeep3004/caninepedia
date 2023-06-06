@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from "react";
 
-const Points = React.memo((props) => {
+const Points = (props) => {
   return (
     <Fragment>
       <div className=" px-1 grid grid-cols-3 gap-8 text-left mx-12 lg:mx-0">
@@ -22,6 +22,6 @@ const Points = React.memo((props) => {
       </div>
     </Fragment>
   );
-});
+};
 
 export default Points;
