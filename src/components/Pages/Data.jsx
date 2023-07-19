@@ -60,7 +60,7 @@ const Data = React.forwardRef((props, ref) => {
                   {props.largeArr[0].name}
                 </h1>
                 {!props.showButton ? (
-                  <div className="tracking-wide leading-6">
+                  <div className="mt-4 tracking-wide leading-10">
                     <p className="px-1">{props.desc}</p>URL:
                     <a href={props.url} className="px-1 hover:underline">
                       {props.url}
