@@ -3,7 +3,7 @@ import React, { useState, Fragment } from "react";
 const Points = (props) => {
   return (
     <Fragment>
-      <div className=" px-1 grid grid-cols-3 gap-8 text-left mx-12 lg:mx-0">
+      <div className=" px-1 grid grid-cols-3 gap-4 text-left mx-12 lg:mx-0">
         <p className="">Barking:{props.fullArr[0].Barking}</p>
         <p>Coat Length:{props.fullArr[0].Coat_Length}</p>
         <p>Drooling:{props.fullArr[0].Drooling}</p>
