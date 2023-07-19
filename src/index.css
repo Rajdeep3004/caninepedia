@@ -37,7 +37,7 @@ w-[15rem] sm:w-[20rem] lg:w-[35rem] 2xl:w-[55rem];
 }
 
 .data-left-grid-outer {
-  @apply mt-8 sm:mt-0 mb-6 md:ml-32 lg:grid lg:grid-cols-2 lg:mb-0;
+  @apply mt-6 sm:mt-0 mb-6 md:ml-32 lg:grid lg:grid-cols-2 lg:mb-0;
 }
 
 .data-left-grid-inner {
