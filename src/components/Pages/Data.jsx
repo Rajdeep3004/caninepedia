@@ -34,13 +34,13 @@ const Data = React.forwardRef((props, ref) => {
                 {props.largeArr.length > 1 && (
                   <div>
                     {" "}
-                    <h1 className="text underline underline-offset-2">
+                    <h1 className="text underline underline-offset-2 mb-2">
                       Related:
                     </h1>
                     {props.largeArr.map((item) => (
                       <p
                         key={Math.random()}
-                        className="text-xs hover:cursor-pointer"
+                        className="text-xs hover:cursor-pointer mb-3"
                         onClick={() => {
                           ref.current.value = item.name;
                         }}
@@ -60,7 +60,7 @@ const Data = React.forwardRef((props, ref) => {
                   {props.largeArr[0].name}
                 </h1>
                 {!props.showButton ? (
-                  <div>
+                  <div className="tracking-wide leading-6">
                     <p className="px-1">{props.desc}</p>URL:
                     <a href={props.url} className="px-1 hover:underline">
                       {props.url}

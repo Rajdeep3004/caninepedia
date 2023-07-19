@@ -9,7 +9,7 @@ body {
 }
 
 .text {
-  @apply text-sm md:text-lg 2xl:text-3xl;
+  @apply text-base md:text-lg 2xl:text-3xl;
 }
 
 .text-color {
