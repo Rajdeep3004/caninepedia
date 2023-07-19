@@ -7,7 +7,7 @@ const About = () => {
       <img src={backpup} className="background" />
       <div className="my-32 mx-4 text-center text tracking-wide">
         Caninepedia has been developed using Dog Api which gets image, points and
-        Web Search Api which retrieves information from wikipedia. Check console
+        Wiki Briefs Api which retrieves information from wikipedia. Check console
         after search for more info.
       </div>
     </Fragment>

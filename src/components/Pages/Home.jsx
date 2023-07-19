@@ -1,6 +1,7 @@
 import React, { useState, useRef, Fragment } from "react";
 import Form from "./Form";
 import Data from "./Data";
+import { data } from "autoprefixer";
 
 const Home = () => {
   const dogName = useRef(); // input ref
@@ -89,40 +90,31 @@ const Home = () => {
 
     /////////////////////////////////////////////////
 
-    const reFetch = () => {
-      fetch(
-        "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/WebSearchAPI?q=" +
-          name,
-        {
-          method: "GET",
-          headers: {
-            "X-RapidAPI-Key":
-              "2efd7f1c7bmshea5d78567512410p18cd05jsnbbd54e0de960",
-            "X-RapidAPI-Host":
-              "contextualwebsearch-websearch-v1.p.rapidapi.com",
-          },
-        }
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.length === 0) {
-            setError(true);
-            return;
-          }
+    const reFetch = async () => {
+      const url = `https://wiki-briefs.p.rapidapi.com/search?q=${name}`;
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key":
+            "2efd7f1c7bmshea5d78567512410p18cd05jsnbbd54e0de960",
+          "X-RapidAPI-Host": "wiki-briefs.p.rapidapi.com",
+        },
+      };
+
+      try {
+        const response = await fetch(url, options);
+        const data = await response.json();
+        if (data.length === 0) {
+          setError(true);
+          return;
+        } else if (data.summary) {
           console.log(data);
-          for (let i = 0; i < data.value.length - 1; i++) {
-            if (data.value[i].title.includes(`Wikipedia`)) {
-              setDesc(data.value[i].description);
-              setUrl(data.value[i].url);
-              return;
-            } else {
-              setDesc("Api couldn't fetch wiki for now.");
-            }
-          }
-        })
-        .catch((error) => {
-          alert(`Web search api --- ${error.message}`);
-        });
+          setDesc(data.summary);
+          setUrl(data.url);
+        }
+      } catch (error) {
+        alert(`Web search api --- ${error.message}`);
+      }
     };
   };
 
