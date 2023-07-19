@@ -40,7 +40,7 @@ const Data = React.forwardRef((props, ref) => {
                     {props.largeArr.map((item) => (
                       <p
                         key={Math.random()}
-                        className="text-xs hover:cursor-pointer mb-3"
+                        className="text hover:cursor-pointer mb-3"
                         onClick={() => {
                           ref.current.value = item.name;
                         }}
