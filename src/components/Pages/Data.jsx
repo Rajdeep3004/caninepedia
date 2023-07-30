@@ -19,9 +19,8 @@ const Data = React.forwardRef((props, ref) => {
 
         {/* left grid -- dog image,name and related list */}
 
-        <div>
-          <div className="data-left-grid-outer">
-            <div className="data-left-grid-inner">
+          <div className="data">
+            <div className="data-left-grid">
               {props.largeArr.length === 1 && (
                 <img
                   alt={props.largeArr[0].name}
@@ -32,8 +31,7 @@ const Data = React.forwardRef((props, ref) => {
 
               <div className="text-center bg-white bg-opacity-75">
                 {props.largeArr.length > 1 && (
-                  <div>
-                    {" "}
+                  <div className="">
                     <h1 className="text underline underline-offset-2 mb-2">
                       Related:
                     </h1>
@@ -55,8 +53,8 @@ const Data = React.forwardRef((props, ref) => {
 
             {/* right grid -- name and description / points */}
             {props.largeArr.length === 1 && (
-              <div className="data-right-grid-outer">
-                <h1 className="data-right-grid-inner">
+              <div className="data-right-grid">
+                <h1 className="underline underline-offset-8 mb-2">
                   {props.largeArr[0].name}
                 </h1>
                 {!props.showButton ? (
@@ -72,7 +70,6 @@ const Data = React.forwardRef((props, ref) => {
               </div>
             )}
           </div>
-        </div>
       </div>
     </Fragment>
   );
