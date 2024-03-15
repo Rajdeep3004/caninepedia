@@ -19,6 +19,11 @@ const Home = () => {
   const fetchHandler = (event) => {
     event.preventDefault();
 
+    if (dogName.current.value.trim().length < 1) {
+      setError(true)
+      return;
+    }
+
     const name = dogName.current.value;
 
     setShowData(false);
