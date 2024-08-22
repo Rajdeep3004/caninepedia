@@ -20,7 +20,7 @@ const Home = () => {
     event.preventDefault();
 
     if (dogName.current.value.trim().length < 1) {
-      setError(true)
+      setError(true);
       return;
     }
 
